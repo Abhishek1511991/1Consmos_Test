@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="user"
+            type="com.test.a1consmostest.model.Data">
+        </variable>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+
+
+        <ImageView
+            android:id="@+id/avator"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="@string/avator" />
+
+        <TextView
+            android:id="@+id/first_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{`First Name: ` +user.first_name}"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/avator"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/last_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{`Last Name: ` +user.last_name}"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            app:layout_constraintLeft_toRightOf="@+id/avator"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/first_name" />
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="@{`Email-Id: ` +user.email}"
+            android:textAppearance="@android:style/TextAppearance.Medium"
+            app:layout_constraintLeft_toRightOf="@+id/avator"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/last_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
